@@ -1,7 +1,7 @@
 <script>
 <? include("graph_generate_data.php"); ?>
 </script>
-<article>
+<article class="getdata">
     <form class="newdata" action="?site=sensor_show_data" method="GET">
         <p>Zeige letzte</p>
         <input class="newdata--enter" type="number" name="limit" value="30" />

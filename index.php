@@ -24,7 +24,7 @@
     <script type="text/javascript" src="js/main.js"></script>
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700" rel="stylesheet" type="text/css" />
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/main.css" type="text/css" />
+    <link rel="stylesheet" href="css/main.min.css" type="text/css" />
     <link rel="author" type="text/plain" href="/humans.txt" />
     <meta http-equiv="refresh" content="300">
 </head>
@@ -37,6 +37,7 @@
             <li><a href="index.php?site=sensor_show_data">Temperaturüberwachung</a></li>
             <li><a href="index.php?site=camera_main">Kameraüberwachung</a></li>
             <li><a href="index.php?site=management_sensors">Sensorverwaltung</a></li>
+            <li><a href="index.php?site=management_users">Benutzerverwaltung</a></li>
         </ul>
     </nav>
 </header>
