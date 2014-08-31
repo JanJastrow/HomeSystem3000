@@ -44,6 +44,12 @@ header {
     background: linear-gradient(to bottom, #606c88 0%,#3f4c6b 100%);
     border-bottom: rgba(0,0,0,0.7);
 }
+header img {
+    height: 32px;
+    float: left;
+    margin-top: 10px;
+    margin-left: 10px;
+}
 header h1 {
   font-size: 1.4em;
   line-height: 1.8;
