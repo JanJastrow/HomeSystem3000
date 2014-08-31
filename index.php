@@ -31,7 +31,7 @@
 </head>
 <body>
 <header class="clearfix">
-    <img src="img/logo.svg" class="logo" />
+    <a href="index.php"><img src="img/logo.svg" class="logo" /></a>
     <h1><a href="index.php">HomeSystem</a></h1>
     <nav>
         <ul>
