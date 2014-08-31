@@ -1,113 +1,59 @@
-<?php
-
-require 'html.inc.php';
-
-echo $header;
-
-?>
-
+<!DOCTYPE HTML>
+<html lang="de">
+<head>
+    <meta charset="UTF-8" />
+    <title>Temperaturüberwachung</title>
+    <link rel="dns-prefetch" href="//ajax.googleapis.com">
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <meta http-equiv="content-type" content="text/html" />
+    <meta name="author" content="Sascha Gering, Jan Jastrow" />
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script type="text/javascript" src="flot/jquery.flot.js"></script>
+    <script type="text/javascript" src="flot/jquery.flot.time.js"></script>
+    <script type="text/javascript" src="flot/jquery.flot.axislabels.js"></script>
+    <script type="text/javascript" src="flot/jquery.flot.symbol.js"></script>
+    
+    <script type="text/javascript" src="js/main.js"></script>
+    
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="css/main.css" type="text/css" />
+    
+    
+</head>
 
 <script>
-
 <? include("gen_data.php"); ?>
-
-var options = {
-    xaxis: {
-        mode: "time",
-        timezone: "browser",
-        tickLength: 0,
-        axisLabelUseCanvas: true,
-        axisLabelFontSizePixels: 12,
-        axisLabelFontFamily: 'Verdana, Arial',
-        axisLabelPadding: 10,
-        color: "black"
-    },
-    yaxes: [{
-            position: "right",
-            color: "black",
-            axisLabel: "Temperatur",
-            axisLabelUseCanvas: true,
-            axisLabelFontSizePixels: 12,
-            axisLabelFontFamily: 'Verdana, Arial'
-        }],
-    legend: {
-        noColumns: 1,
-        labelBoxBorderColor: "#000000",
-        position: "nw"
-    },
-    grid: {
-        hoverable: true,
-        borderWidth: 3,
-        backgroundColor: { colors: ["#ffffff", "#EDF5FF"] }
-    }
-};
-
-$(document).ready(function () {
-    $.plot($("#flot-placeholder"), dataset, options);
-    $("#flot-placeholder").UseTooltip();
-});
-
-
-
-
-var previousPoint = null, previousLabel = null;
-
-$.fn.UseTooltip = function () {
-    $(this).bind("plothover", function (event, pos, item) {
-        if (item) {
-            if ((previousLabel != item.series.label) || (previousPoint != item.dataIndex)) {
-                previousPoint = item.dataIndex;
-                previousLabel = item.series.label;
-                $("#tooltip").remove();
-
-                //console.log(item.datapoint);
-                var x = item.datapoint[0];
-                var y = item.datapoint[1];
-                var d = new Date(x);
-
-                var color = item.series.color;
-
-
-                //console.log(item);
-                var unit = "°C";
-
-                showTooltip(item.pageX, item.pageY, color,
-                            "<strong>" + item.series.label + "</strong><br>" + d +
-                            " : <strong>" + y + "</strong> °C");
-            }
-        } else {
-            $("#tooltip").remove();
-            previousPoint = null;
-        }
-    });
-};
-
-function showTooltip(x, y, color, contents) {
-    $('<div id="tooltip">' + contents + '</div>').css({
-        position: 'absolute',
-        display: 'none',
-        top: y - 40,
-        left: x - 120,
-        border: '2px solid ' + color,
-        padding: '3px',
-        'font-size': '9px',
-        'border-radius': '5px',
-        'background-color': '#fff',
-        'font-family': 'Verdana, Arial, Helvetica, Tahoma, sans-serif',
-        opacity: 0.9
-    }).appendTo("body").fadeIn(200);
-}
-
-
-
-
 </script>
+
 </head>
 <body>
-<?php echo $body_before; ?>
-<div id="flot-placeholder"></div>
 
-<?php echo $body_after; ?>
+<header class="clearfix">
+    <h1><a href="index.php">HomeSystem</a></h1>
+    <nav>
+        <ul>
+            <li><a href="index.php?site=temperature">Temperaturüberwachung</a></li>
+            <li><a href="index.php?site=camera">Kameraüberwachung</a></li>
+        </ul>
+    </nav>
+</header>
+<article>
+    <form class="newdata" action="index.php" method="GET">
+        <p>Zeige letzte</p>
+        <input class="newdata--enter" type="number" name="limit" value="30" />
+        <p>Werte.</p>
+        <input class="newdata--submit" type="submit" name="submit" value="Aktualisieren" />
+    </form>
+</article>
+<article>
+    <ul class="last">
+        <li><a href="?limit=288">Zeige die letzten 24h</a></li>
+        <li><a href="?limit=144">Zeige die letzten 12h</a></li>
+        <li><a href="?limit=24">Zeige die letzten 2h</a></li>
+    </p>
+</article>
+
+<div id="flot-placeholder"></div>
 
 </body>
 </html>
