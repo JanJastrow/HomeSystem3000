@@ -1,35 +1,4 @@
-/*  Resets
---------------------------*/
-
-*, *::before, *::after {
-    margin: 0;
-    padding: 0;
-}
-
-html {
-    height: 100%;
-    box-sizing: border-box;
-    text-size-adjust: 100%;
-}
-
-/* Ideal Viewport-Fix for IE */
-@-ms-viewport {
-    width: device-width; }
-
-/*  Cleafix
---------------------------*/
-.clearfix::before, .clearfix::after {
-    content: " ";
-    display: table;
-}
-
-.clearfix::after {
-    clear: both;
-}
-
-.clearfix {
-    *zoom: 1;
-}
+@import '_resets';
 
 /*  Main Content
 --------------------------*/
@@ -44,65 +13,85 @@ html {
     margin: 0 auto;
     padding: 0 1em;
 }
+
 table, img, iframe {
     max-width: 100%;
-}
-
-header {
-    margin-bottom: 1em;
-    background: linear-gradient(to bottom, #606c88 0%,#3f4c6b 100%);
-    border-bottom: rgba(0,0,0,0.7);
-}
-header img {
-    height: 32px;
-    width: 37px;
-    float: left;
-    margin-top: 10px;
-    margin-left: 10px;
-}
-header h1 {
-  font-size: 1.4em;
-  line-height: 1.8;
-  padding: 0.4em 0.6em;
-  color: rgba(255,255,255,0.9);
-  display: inline-block;
-  float: left;
-}
-h1 a, h1 a:visited, h1 a:active {
-    color: inherit;
-    text-decoration: none;
-}
-nav {
-    float: left;
-}
-nav ul {
-    margin: 1.1em 0;
-}
-nav ul li {
-    display: inline-block;
-    margin: 0 0.6em;
-    padding: 0;
-}
-nav ul li a {
-    font-size: 11pt;
-    color: #fff;
-    text-decoration: underline;
-}
-nav ul li a::before {
-    content: ':: ';
-}
-@media only screen and (max-width: 768px) {
-    nav ul li a::before {
-        content: '';
-    }
-    nav ul li {
-        margin: 0 0.4em;
-    }
+    height: auto;
 }
 
 .wrapper h1 {
     margin-bottom: 1em;
 }
+
+h1 a, h1 a:visited, h1 a:active {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+/*  Header
+--------------------------*/
+
+header .title {
+    background: linear-gradient(to bottom, #606c88 0%,#3f4c6b 100%);
+    border-bottom: 1px solid rgba(0,0,0,0.9);
+
+    img {
+        height: 32px;
+        width: 37px;
+        float: left;
+        margin-top: 10px;
+        margin-left: 10px;
+    }
+    h1 {
+        font-size: 1.4em;
+        line-height: 1.8;
+        padding: 0.4em 0.6em;
+        color: #eaf4ff;
+        text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
+        display: inline-block;
+        float: left;
+    }
+}
+
+nav {
+    background: linear-gradient(to bottom, #404040 0%,#333333 100%);
+    border-top: 1px solid rgba(255,255,255,0.2);
+    border-bottom: 1px solid rgba(0,0,0,1);
+    padding: 0.5em 0.5em;
+    margin-bottom: 0.8em;
+}
+nav ul {
+
+    li {
+        display: inline-block;
+
+        a {
+            margin: 0.6em 0.6em;
+            font-size: 11pt;
+            color: #ddd;
+            text-decoration: none;
+            transition: color 0.3s ease;
+
+            &:hover {
+                color: #fff;
+            }
+        }
+    }
+}
+@media only screen and (max-width: 768px) {
+}
+@media only screen and (max-width: 450px) {
+    nav ul li {
+        display: block;
+
+        a {
+            display: block;
+            margin: 0.9em 0.7em;
+        }
+    }
+}
+
 
 /*  Temperatur
 --------------------------*/

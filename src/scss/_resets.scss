@@ -1,0 +1,33 @@
+/*  Resets
+--------------------------*/
+
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    height: 100%;
+    box-sizing: border-box;
+    text-size-adjust: 100%;
+}
+
+/* Ideal Viewport-Fix for IE */
+@-ms-viewport {
+    width: device-width; }
+
+/*  Cleafix
+--------------------------*/
+.clearfix::before, .clearfix::after {
+    content: "";
+    display: table;
+}
+
+.clearfix::after {
+    clear: both;
+}
+
+.clearfix {
+    *zoom: 1;
+}
+

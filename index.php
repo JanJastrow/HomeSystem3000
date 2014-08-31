@@ -28,11 +28,14 @@ require 'inc/settings.inc.php';
     <meta http-equiv="refresh" content="300">
 </head>
 <body>
-<header class="clearfix">
-    <a href="index.php"><img src="img/logo.svg" class="logo" alt="Logo" /></a>
-    <h1><a href="index.php"><?php echo $project_title; ?></a></h1>
+<header>
+    <div class="title clearfix">
+        <a href="index.php"><img src="img/logo.svg" class="logo" alt="Logo" /></a>
+        <h1><a href="index.php"><?php echo $project_title; ?></a></h1>
+    </div>
     <nav>
         <ul>
+            <li><a href="index.php?site=status_main">Status</a></li>
             <li><a href="index.php?site=sensor_show_data">Temperaturüberwachung</a></li>
             <li><a href="index.php?site=camera_main">Kameraüberwachung</a></li>
             <li><a href="index.php?site=management_sensors">Sensorverwaltung</a></li>
