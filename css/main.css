@@ -203,6 +203,11 @@ td.sensors--status {
     color: inherit;
     text-decoration: none; }
 
+/*  Kamera
+--------------------------*/
+.frame iframe {
+  border: 1px solid black; }
+
 /*  Userverwaltung
 --------------------------*/
 .users {

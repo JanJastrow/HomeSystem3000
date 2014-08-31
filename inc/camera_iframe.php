@@ -24,7 +24,7 @@ $offline = FALSE;
 <body>
 <?php
 
-$filename = './tmp/cam1_resized.jpg';
+$filename = '../tmp/cam1_resized.jpg';
 $now = date(time());
 $filedate = date(filemtime($filename));
 

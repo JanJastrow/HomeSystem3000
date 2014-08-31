@@ -171,6 +171,7 @@ ul.last li:hover, ul.last li:active{
     }
 }
 
+
 /*  Sensors
 --------------------------*/
 
@@ -227,9 +228,16 @@ td.sensors--status {
 }
 
 
-/*  Userverwaltung
+/*  Kamera
 --------------------------*/
 
+.frame iframe {
+    border: 1px solid black;
+}
+
+
+/*  Userverwaltung
+--------------------------*/
 
 .users {
     max-width: 700px;
