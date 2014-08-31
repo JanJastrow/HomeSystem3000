@@ -1,25 +1,15 @@
 <?php
 
-/**
- * @company gering.it
- * @author Sascha Gering ($email)
- * @copyright 2014
- * @date 21:29 - 29.8.2014
- * @project Kein Projekt geladen
- */
-
 require 'settings.inc.php';
 
 ?>
-var dataset = 
+var dataset =
 [
 <?
-$limit = $_POST['limit'];
-
-if (empty ($_POST['limit'])) {
+if (empty ($_GET['limit'])) {
     $limit = 30;
 } else {
-    $limit = $_POST['limit'];
+    $limit = $_GET['limit'];
 }
 
 $con=mysqli_connect($sql_server,$sql_username,$sql_password,$sql_db);
@@ -35,7 +25,7 @@ $result = mysqli_query($con,"SELECT name, sensor_hardware_id, sensor_html_color,
 $sensors_num = mysqli_num_rows($result);
 
 while($row = mysqli_fetch_array($result)) {
-    
+
     $sensor_name        =       $row['name'];
     $sensor_1w_id       =       $row['sensor_hardware_id'];
     $sensor_html_color  =       $row['sensor_html_color'];
@@ -45,18 +35,18 @@ while($row = mysqli_fetch_array($result)) {
      {
         label: "<? echo $sensor_name ?>",
         data:[<?
-    
+
     $result1 = mysqli_query($con,"SELECT value, timestamp FROM sensor_values WHERE sensor_id = '$sensor_1w_id' order by value_id desc limit $limit");
     $value_count = mysqli_num_rows($result1);
-    
-    
-    while($row1 = mysqli_fetch_array($result1)) 
+
+
+    while($row1 = mysqli_fetch_array($result1))
     {
         $timestamp = $row1['timestamp'];
         $timestamp = $timestamp * 1000;
 
         ?>[<? echo $timestamp ?>, <? echo $row1['value'] ?>]<?
-        
+
         if($x <> $value_count)
         {
             echo ",";
@@ -79,8 +69,8 @@ while($row = mysqli_fetch_array($result)) {
 
     ?>
 
- <?  
-   $y++; 
+ <?
+   $y++;
 }
 mysqli_close($con);
 ?>
