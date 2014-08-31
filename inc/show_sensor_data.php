@@ -2,7 +2,7 @@
 <? include("gen_data.php"); ?>
 </script>
 <article>
-    <form class="newdata" action="index.php" method="GET">
+    <form class="newdata" action="?site=show_sensor_data" method="POST">
         <p>Zeige letzte</p>
         <input class="newdata--enter" type="number" name="limit" value="30" />
         <p>Werte.</p>

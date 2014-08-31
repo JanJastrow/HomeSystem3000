@@ -14,12 +14,12 @@ require 'settings.inc.php';
 var dataset = 
 [
 <?
-$limit = $_GET['limit'];
+$limit = $_POST['limit'];
 
-if (empty ($_GET['limit'])) {
+if (empty ($_POST['limit'])) {
     $limit = 30;
 } else {
-    $limit = $_GET['limit'];
+    $limit = $_POST['limit'];
 }
 
 $con=mysqli_connect($sql_server,$sql_username,$sql_password,$sql_db);
