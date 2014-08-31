@@ -3,8 +3,13 @@
 <head>
     <meta charset="UTF-8" />
 
-    <title>Temperaturüberwachung</title>
-    <link rel="shortcut icon" href="favicon.ico" />
+    <title>HomeSystem</title>
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="icon" sizes="16x16 32x32 64x64" href="/favicon.ico">
+    <link rel="apple-touch-icon" sizes="152x152" href="/favicon-152.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/favicon-144.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/favicon-120.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/favicon-114.png">
     <link rel="dns-prefetch" href="//ajax.googleapis.com">
     <link rel="dns-prefetch" href="//fonts.googleapis.com">
 
@@ -17,12 +22,11 @@
     <script type="text/javascript" src="flot/jquery.flot.time.js"></script>
     <script type="text/javascript" src="flot/jquery.flot.axislabels.js"></script>
     <script type="text/javascript" src="flot/jquery.flot.symbol.js"></script>
-
     <script type="text/javascript" src="js/main.js"></script>
 
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="css/main.css" type="text/css" />
-
+    <link rel="author" type="text/plain" href="/humans.txt" />
     <meta http-equiv="refresh" content="300">
 </head>
 <body>
@@ -32,6 +36,7 @@
     <nav>
         <ul>
             <li><a href="index.php?site=show_sensor_data">Temperaturüberwachung</a></li>
+            <li><a href="index.php?site=show_sensor_management">Sensorverwaltung</a></li>
             <li><a href="index.php?site=camera">Kameraüberwachung</a></li>
         </ul>
     </nav>

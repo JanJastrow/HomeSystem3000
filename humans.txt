@@ -1,0 +1,17 @@
+/* TEAM */
+  Code: Sascha Gering
+  Site: http://mysash.de
+  Twitter: @mysash
+  Location: Rendsburg, Schleswig-Holstein, Germany
+
+  Design: Jan Jastrow
+  Site: http://jastrow.me
+  Twitter: @Gehirnfussel
+  Location: Rendsburg, Schleswig-Holstein, Germany
+
+/* THANKS */
+
+
+/* SITE */
+  Standards: HTML5, CSS3
+  Software: Sublime Text 3, Photoshop CS5, phpDesigner 8
