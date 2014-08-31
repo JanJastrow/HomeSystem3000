@@ -12,11 +12,7 @@ if (empty ($_GET['limit'])) {
     $limit = $_GET['limit'];
 }
 
-$con=mysqli_connect($sql_server,$sql_username,$sql_password,$sql_db);
-// Check connection
-if (mysqli_connect_errno()) {
-  echo "Failed to connect to MySQL: " . mysqli_connect_error();
-}
+require('mysql.inc.php');
 
 $x = 1;
 $y = 1;

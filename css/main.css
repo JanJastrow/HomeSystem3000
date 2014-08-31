@@ -71,7 +71,7 @@ nav ul {
 }
 nav ul li {
     display: inline-block;
-    margin: 0 1em;
+    margin: 0 0.6em;
     padding: 0;
 }
 nav ul li a {
@@ -83,6 +83,10 @@ nav ul li a::before {
     content: ':: ';
 }
 
+.getdata {
+    margin: 0 auto;
+    text-align: center;
+}
 .newdata {
     margin: 1.4em 1em;
     font-size: 1.1em;
@@ -110,7 +114,7 @@ nav ul li a::before {
 
 ul.last {
     margin: 1em auto;
-    width: 600px;
+    text-align: center;
     font-size: 10pt;
 }
 ul.last li {
@@ -133,7 +137,56 @@ ul.last li:hover, ul.last li:active{
 }
 
 #flot-placeholder {
-    max-width: 800px;
+    max-width: 80%;
     height: 300px;
     margin: 0 auto;
+}
+@media only screen and (min-device-width : 768px) {
+    #flot-placeholder {
+        max-width: 738px;
+    }
+}
+
+.wrapper {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 1em;
+}
+table, img, iframe {
+    max-width: 100%;
+}
+
+
+.sensors {
+    max-width: 700px;
+    margin: 1em auto;
+}
+.sensors td {
+    border: 1px solid #666;
+    padding: 0 0.5em 0 0.5em;
+}
+td.sensors--status {
+    border: none;
+}
+.sensors--status i {
+    margin: 0 0.3em 0 0.7em;
+}
+.sensors--status__red {
+    color: #f00;
+    text-shadow: 0px 1px 2px rgba(0,0,0,0.3);
+}
+.sensors--status__green {
+    color: #26d21e;
+    text-shadow: 0px 1px 2px rgba(0,0,0,0.3);
+}
+
+.sensors--name {
+}
+.sensors--edit {
+}
+.sensors--edit i {
+    margin: 0 0.2em;
+}
+.sensors--edit i a {
+    color: inherit;
 }

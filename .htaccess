@@ -1,6 +1,9 @@
 # CHARSET
 AddDefaultCharset utf-8
 
+# Error Redirecting
+ErrorDocument 404 /?site=error-404
+
 
 # MIME TYPES
 AddType application/font-woff .woff
