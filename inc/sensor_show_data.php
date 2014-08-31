@@ -1,4 +1,5 @@
-<script>
+<h1>Temperaturüberwachung</h1>
+<script type="text/javascript">
 <? include("graph_generate_data.php"); ?>
 </script>
 <article class="getdata">

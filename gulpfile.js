@@ -15,6 +15,7 @@ var	gulp 			= require('gulp'),
 	cache 			= require('gulp-cache'),
 	livereload 		= require('gulp-livereload');
 
+
 // render scss
 gulp.task('styles', function() {
 	gulp.src('./src/scss/main.scss')
@@ -27,6 +28,7 @@ gulp.task('styles', function() {
 		.pipe(notify({ message: 'Styles task complete' }));
 });
 
+
 // compress images
 gulp.task('images', function() {
 	gulp.src('./src/img/*')
@@ -35,11 +37,6 @@ gulp.task('images', function() {
 		.pipe(notify({ message: 'Images task complete' }));
 });
 
-// clean the folders
-gulp.task('clean', function() {
-	gulp.src(['./css/*', './js/*', './img/*'], {read: false})
-		.pipe(clean());
-});
 
 // do the javascript-dance
 gulp.task('scripts', function() {
@@ -52,6 +49,7 @@ gulp.task('scripts', function() {
 		.pipe(notify({ message: 'Scripts task complete' }));
 });
 
+
 // watch it while working
 gulp.task('watch', function() {
 	// Watch .scss files
@@ -63,6 +61,14 @@ gulp.task('watch', function() {
 	// Watch image files
 	gulp.watch('src/img/**/*', ['images']);
 });
+
+
+// clean the folders
+gulp.task('clean', function() {
+	gulp.src(['./css/*', './js/*', './img/*'], {read: false})
+		.pipe(clean());
+});
+
 
 // default: all of them! \o/
 gulp.task('default', ['clean'], function() {
