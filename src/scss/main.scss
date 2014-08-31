@@ -1,5 +1,11 @@
 @import '_resets';
 
+/*  Vars
+--------------------------*/
+
+$gradient-color1: #3f4c6b;
+$gradient-color2: #606c88;
+
 /*  Main Content
 --------------------------*/
 
@@ -33,7 +39,7 @@ h1 a, h1 a:visited, h1 a:active {
 --------------------------*/
 
 header .title {
-    background: linear-gradient(to bottom, #606c88 0%,#3f4c6b 100%);
+    background: linear-gradient(to bottom, $gradient-color2 0%, $gradient-color1 100%);
     border-bottom: 1px solid rgba(0,0,0,0.9);
 
     img {
@@ -120,9 +126,14 @@ nav ul {
     margin-left: 1em;
     background: #c8d4f5;
     color: #fff;
-    border: 1px solid #60729b;
-    background-color: #60729b;
+    border: 1px solid $gradient-color2;
+    background-color: $gradient-color2;
     border-radius: 5px;
+
+    &:active, &:hover{
+        background-color: lighten($gradient-color2, 10%);
+        border: 1px solid lighten($gradient-color2, 10%);
+    }
 }
 
 ul.last {
@@ -133,20 +144,22 @@ ul.last {
 ul.last li {
     display: inline-block;
     margin: 0 0.5em;
-    border: 1px solid #60729b;
-    background-color: #60729b;
+    border: 1px solid $gradient-color2;
+    background-color: $gradient-color2;
     color: #fff;
     padding: 4px 8px;
     border-radius: 5px;
     transition: all 0.4s;
-}
-ul.last li a {
-    text-decoration: none;
-    color: inherit;
-}
-ul.last li:hover, ul.last li:active{
-    background-color: #778fc7;
-    border: 1px solid #778fc7;
+
+    &:hover, &:active{
+        background-color: lighten($gradient-color2, 10%);
+        border: 1px solid lighten($gradient-color2, 10%);
+    }
+
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
 }
 
 #flot-placeholder {
@@ -175,27 +188,28 @@ ul.last li:hover, ul.last li:active{
 }
 td.sensors--status {
     border: none;
+    text-shadow: 0px 1px 2px rgba(0,0,0,0.3);
+
     i {
         margin: 0 0.3em 0 0.7em;
     }
 }
 .sensors--status__red {
     color: #f00;
-    text-shadow: 0px 1px 2px rgba(0,0,0,0.3);
 }
 .sensors--status__green {
     color: #26d21e;
-    text-shadow: 0px 1px 2px rgba(0,0,0,0.3);
 }
 .sensors--name {
 }
 .sensors--edit {
-}
-.sensors--edit i {
-    margin: 0 0.2em;
-}
-.sensors--edit a {
-    color: inherit;
+
+    i {
+        margin: 0 0.2em;
+    }
+    a {
+        color: inherit;
+    }
 }
 
 .sensors--add p {

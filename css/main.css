@@ -29,6 +29,8 @@ html {
 .clearfix {
   *zoom: 1; }
 
+/*  Vars
+--------------------------*/
 /*  Main Content
 --------------------------*/
 html {
@@ -129,9 +131,12 @@ nav ul li {
   margin-left: 1em;
   background: #c8d4f5;
   color: #fff;
-  border: 1px solid #60729b;
-  background-color: #60729b;
+  border: 1px solid #606c88;
+  background-color: #606c88;
   border-radius: 5px; }
+  .newdata--submit:active, .newdata--submit:hover {
+    background-color: #7a86a1;
+    border: 1px solid #7a86a1; }
 
 ul.last {
   margin: 1em auto;
@@ -141,21 +146,19 @@ ul.last {
 ul.last li {
   display: inline-block;
   margin: 0 0.5em;
-  border: 1px solid #60729b;
-  background-color: #60729b;
+  border: 1px solid #606c88;
+  background-color: #606c88;
   color: #fff;
   padding: 4px 8px;
   border-radius: 5px;
   -webkit-transition: all 0.4s;
           transition: all 0.4s; }
-
-ul.last li a {
-  text-decoration: none;
-  color: inherit; }
-
-ul.last li:hover, ul.last li:active {
-  background-color: #778fc7;
-  border: 1px solid #778fc7; }
+  ul.last li:hover, ul.last li:active {
+    background-color: #7a86a1;
+    border: 1px solid #7a86a1; }
+  ul.last li a {
+    text-decoration: none;
+    color: inherit; }
 
 #flot-placeholder {
   max-width: 80%;
@@ -176,21 +179,19 @@ ul.last li:hover, ul.last li:active {
     padding: 0.2em 0.5em 0.2em 0.5em; }
 
 td.sensors--status {
-  border: none; }
+  border: none;
+  text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.3); }
   td.sensors--status i {
     margin: 0 0.3em 0 0.7em; }
 
 .sensors--status__red {
-  color: #f00;
-  text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.3); }
+  color: #f00; }
 
 .sensors--status__green {
-  color: #26d21e;
-  text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.3); }
+  color: #26d21e; }
 
 .sensors--edit i {
   margin: 0 0.2em; }
-
 .sensors--edit a {
   color: inherit; }
 
