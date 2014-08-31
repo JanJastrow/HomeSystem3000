@@ -1,8 +1,11 @@
+<?php
+require 'inc/settings.inc.php';
+?>
 <!DOCTYPE HTML>
 <html lang="de">
 <head>
     <meta charset="UTF-8" />
-    <title>HomeSystem</title>
+    <title><?php echo $project_title; ?></title>
     <link rel="shortcut icon" href="/favicon.ico" />
     <link rel="icon" sizes="16x16 32x32 64x64" href="/favicon.ico">
     <link rel="apple-touch-icon" sizes="152x152" href="/favicon-152.png">
@@ -21,7 +24,8 @@
     <script type="text/javascript" src="/js/flot/jquery.flot.time.js"></script>
     <script type="text/javascript" src="/js/flot/jquery.flot.axislabels.js"></script>
     <script type="text/javascript" src="/js/flot/jquery.flot.symbol.js"></script>
-    <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript" src="/js/jconfirmaction.jquery.js"></script>
+    <script type="text/javascript" src="/js/main.js"></script>
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700" rel="stylesheet" type="text/css" />
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/main.min.css" type="text/css" />
@@ -31,7 +35,7 @@
 <body>
 <header class="clearfix">
     <a href="index.php"><img src="img/logo.svg" class="logo" /></a>
-    <h1><a href="index.php">HomeSystem</a></h1>
+    <h1><a href="index.php"><?php echo $project_title; ?></a></h1>
     <nav>
         <ul>
             <li><a href="index.php?site=sensor_show_data">Temperaturüberwachung</a></li>
