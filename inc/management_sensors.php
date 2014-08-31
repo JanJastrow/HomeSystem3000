@@ -39,6 +39,8 @@ while($row = mysqli_fetch_array($result)) {
 }
 ?>
 </table>
+<div class="sensors--add">
 <p>
     <a href="?site=add_sensor"><i class="fa fa-plus-square fa-2x"></i>neuen Sensor erstellen</a>
 </p>
+</div>

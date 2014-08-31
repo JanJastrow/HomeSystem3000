@@ -40,6 +40,8 @@ while($row = mysqli_fetch_array($result)) {
 }
 ?>
 </table>
+<div class="users--add">
 <p>
-    <a href="?site=system_user_create"><i class="fa fa-plus-square fa-2x"></i></i>neuen User erstellen</a>
+    <a href="?site=management_users_create"><i class="fa fa-plus-square"></i></i>neuen User erstellen</a>
 </p>
+</div>
