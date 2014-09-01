@@ -1,5 +1,5 @@
 <?php
-require 'inc/settings.inc.php';
+    require 'inc/settings.inc.php';
 ?>
 <!DOCTYPE HTML>
 <html lang="de">
@@ -14,7 +14,6 @@ require 'inc/settings.inc.php';
     <link rel="apple-touch-icon" sizes="114x114" href="/favicon-114.png">
     <link rel="dns-prefetch" href="//ajax.googleapis.com">
     <link rel="dns-prefetch" href="//fonts.googleapis.com">
-    <link rel="dns-prefetch" href="//maxcdn.bootstrapcdn.com">
     <meta http-equiv="content-type" content="text/html" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -22,10 +21,8 @@ require 'inc/settings.inc.php';
     <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script type="text/javascript" src="/js/main.min.js"></script>
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700" rel="stylesheet" type="text/css" />
-    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/main.min.css" type="text/css" />
     <link rel="author" type="text/plain" href="/humans.txt" />
-    <meta http-equiv="refresh" content="300">
 </head>
 <body>
 <header>
@@ -36,6 +33,7 @@ require 'inc/settings.inc.php';
     <nav>
         <ul>
             <li><a href="index.php?site=status_main">Status</a></li>
+            <li><a href="index.php?site=weather_main">Wetter</a></li>
             <li><a href="index.php?site=sensor_show_data">Temperaturüberwachung</a></li>
             <li><a href="index.php?site=camera_main">Kameraüberwachung</a></li>
             <li><a href="index.php?site=management_sensors">Sensorverwaltung</a></li>

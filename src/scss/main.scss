@@ -1,4 +1,9 @@
+// Reset
 @import '_resets';
+
+// Fonts
+@import '_font-awesome';
+@import '_weather-icons';
 
 /*  Vars
 --------------------------*/
@@ -98,6 +103,75 @@ nav ul {
             margin: 0.9em 0.7em;
         }
     }
+}
+
+
+/*  Wetter
+--------------------------*/
+
+.weather {
+    .weather--now {
+      font-size: 20pt;
+
+      .wi {
+        margin-right: 10px;
+        font-size: 28pt;
+      }
+    }
+
+    div {
+        margin: 1em 0;
+    }
+    table {
+        margin: 1em 0;
+    }
+    td {
+        border: 1px solid #000;
+        padding: 0.2em 0.3em;
+    }
+    .weather--next-hours td:nth-child(1) {
+        background-color: darken(#fff, 0%);
+    }
+    .weather--next-hours td:nth-child(2) {
+        background-color: darken(#fff, 3%);
+    }
+    .weather--next-hours td:nth-child(3) {
+        background-color: darken(#fff, 6%);
+    }
+    .weather--next-hours td:nth-child(4) {
+        background-color: darken(#fff, 9%);
+    }
+    .weather--next-hours td:nth-child(5) {
+        background-color: darken(#fff, 12%);
+    }
+
+
+    .weather--next-week td:nth-child(1) {
+        background-color: darken(#d9ecff, 0%);
+    }
+    .weather--next-week td:nth-child(2) {
+        background-color: darken(#d9ecff, 2%);
+    }
+    .weather--next-week td:nth-child(3) {
+        background-color: darken(#d9ecff, 4%);
+    }
+    .weather--next-week td:nth-child(4) {
+        background-color: darken(#d9ecff, 6%);
+    }
+    .weather--next-week td:nth-child(5) {
+        background-color: darken(#d9ecff, 8%);
+    }
+    .weather--next-week td:nth-child(6) {
+        background-color: darken(#d9ecff, 10%);
+    }
+    .weather--next-week td:nth-child(7) {
+        background-color: darken(#d9ecff, 12%);
+    }
+    .weather--next-week td:nth-child(8) {
+        background-color: darken(#d9ecff, 14%);
+    }
+
+
 }
 
 
@@ -244,6 +318,8 @@ body.iframe img {
     margin: 0.5em 0;
 
     iframe {
+        width: 768px;
+        max-width: 100%;
         border: 0;
     }
 }
