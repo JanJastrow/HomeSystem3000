@@ -1,5 +1,6 @@
 <?php
     require 'inc/settings.inc.php';
+    setlocale(LC_TIME, '$language');
 ?>
 <!DOCTYPE HTML>
 <html lang="de">
@@ -30,7 +31,7 @@
         <a href="index.php"><img src="img/logo.svg" class="logo" alt="Logo" /></a>
         <h1><a href="index.php"><?php echo $project_title; ?></a></h1>
     </div>
-    <nav>
+    <nav class="nav">
         <ul>
             <li><a href="index.php?site=status_main">Status</a></li>
             <li><a href="index.php?site=weather_main">Wetter</a></li>
@@ -43,6 +44,11 @@
 </header>
 <div class="wrapper">
 <?
+if ($debugmode = TRUE) {
+    error_reporting(E_ALL);
+    ini_set('display_errors', 1);
+}
+
 $file = $_GET['site'];
 if(file_exists("inc/$file.php"))
 {

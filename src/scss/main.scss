@@ -104,6 +104,15 @@ nav ul {
         }
     }
 }
+.nav--fixed {
+    position: fixed;
+
+    z-index: 1000;
+    border-top: 1px solid #000;
+    top: 0;
+    left: 0;
+    right: 0;
+}
 
 
 /*  Wetter
