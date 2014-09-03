@@ -8,9 +8,10 @@ var options = {
         mode: "time",
         timezone: "browser",
         tickLength: 0,
+        axisLabel: "Zeitraum",
         axisLabelUseCanvas: true,
         axisLabelFontSizePixels: 12,
-        axisLabelFontFamily: 'Verdana, Arial',
+        axisLabelFontFamily: 'Open Sans, Verdana, Arial',
         axisLabelPadding: 10,
         color: "black"
     },
@@ -20,22 +21,24 @@ var options = {
             axisLabel: "Temperatur",
             axisLabelUseCanvas: true,
             axisLabelFontSizePixels: 12,
-            axisLabelFontFamily: 'Verdana, Arial'
+            axisLabelFontFamily: 'Open Sans, Verdana, Arial'
         }],
     /*legend: {
         noColumns: 1,
         labelBoxBorderColor: "#000000",
         position: "nw"
-        container:$("#flot-legend"),    
+        container:$("#flot-legend"),
     },*/
-legend:{         
-            container:$("#flot-legend"),            
-            noColumns: 0
-        },    
+    legend:{
+        container: $("#flot-legend"),
+        noColumns: 0,
+        position: "nw",
+        show: true,
+    },
     grid: {
         hoverable: true,
-        borderWidth: 3,
-        backgroundColor: { colors: ["#ffffff", "#EDF5FF"] }
+        borderWidth: 2,
+        backgroundColor: { colors: ["#ffd8d8","#fffde4", "#ffffff"] }
     }
 };
 
@@ -55,30 +58,24 @@ $(document).ready(function () {
 </article>
 <article>
     <ul class="last">
-        <li><a href="?site=sensor_show_data&limit=288">Zeige die letzten 24h</a></li>
-        <li><a href="?site=sensor_show_data&limit=144">Zeige die letzten 12h</a></li>
-        <li><a href="?site=sensor_show_data&limit=24">Zeige die letzten 2h</a></li>
+        <li><a href="?site=sensor_show_data&limit=96">Zeige die letzten 24h</a></li>
+        <li><a href="?site=sensor_show_data&limit=48">Zeige die letzten 12h</a></li>
+        <li><a href="?site=sensor_show_data&limit=8">Zeige die letzten 2h</a></li>
     </p>
 </article>
 <style type="text/css">
-#flotcontainer {
-    width: 600px;
-    height: 200px;
-    text-align: left;
-}
-
 #flot-legend {
-    background-color: #fff;
-    padding: 2px;
+    background-color: #dddddd;
+    padding: 4px;
     margin-bottom: 8px;
-    border-radius: 3px 3px 3px 3px;
+    border-radius: 3px;
     border: 1px solid #E6E6E6;
     display: inline-block;
-    margin: 0 auto;
+    margin: 0.8em auto;
 }
 
 </style>
 <div id="flot-container">
-    <div id="flot-placeholder"></div>
     <div id="flot-legend"></div>
+    <div id="flot-placeholder"></div>
 </div>

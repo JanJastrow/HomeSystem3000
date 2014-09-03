@@ -33,12 +33,13 @@
     </div>
     <nav class="nav">
         <ul>
-            <li><a href="index.php?site=status_main">Status</a></li>
-            <li><a href="index.php?site=weather_main">Wetter</a></li>
-            <li><a href="index.php?site=sensor_show_data">Temperaturüberwachung</a></li>
-            <li><a href="index.php?site=camera_main">Kameraüberwachung</a></li>
-            <li><a href="index.php?site=management_sensors">Sensorverwaltung</a></li>
-            <li><a href="index.php?site=management_users">Benutzerverwaltung</a></li>
+            <li><a href="index.php?site=status_main"><i class="fa fa-tachometer"></i> Status</a></li>
+            <li><a href="index.php?site=weather_main"><i class="wi wi-horizon-alt"></i> Wetter</a></li>
+            <li><a href="index.php?site=sensor_show_data"><i class="fa fa-area-chart"></i> Temperaturüberwachung</a></li>
+            <li><a href="index.php?site=camera_main"><i class="fa fa-camera"></i> Kameraüberwachung</a></li>
+            <li><a href="index.php?site=management_sensors"><i class="fa fa-sliders"></i> Sensorverwaltung</a></li>
+            <li><a href="index.php?site=management_users"><i class="fa fa-users"></i> Benutzerverwaltung</a></li>
+            <li><a href="index.php?site=settings_users"><i class="fa fa-cog"></i> Einstellungen</a></li>
         </ul>
     </nav>
 </header>
