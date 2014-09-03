@@ -50,7 +50,11 @@ if ($debugmode = TRUE) {
     ini_set('display_errors', 1);
 }
 
-$file = $_GET['site'];
+if (empty($_GET['site'])) {
+    $file = 'main';
+} else {
+    $file = $_GET['site'];
+}
 if(file_exists("inc/$file.php"))
 {
     include("inc/$file.php");

@@ -10,7 +10,8 @@
 
 $gradient-color1: #3f4c6b;
 $gradient-color2: #606c88;
-$debug-color: #e02222;
+$debug-color: #8922e0;
+$error-color: #e02222;
 
 /*  Main Content
 --------------------------*/
@@ -43,10 +44,16 @@ h1 a, h1 a:visited, h1 a:active {
     text-decoration: none;
 }
 
-.debug {
+.msg__inline {
     display: inline-block;
-    margin: 0.5em 0;
+    margin: 0.5em 0.5em 0.5em 0;
     padding: 0.5em 0.8em;
+}
+.error {
+    background: lighten($error-color, 40%);
+    border: 1px solid $error-color;
+}
+.debug {
     background: lighten($debug-color, 40%);
     border: 1px solid $debug-color;
 }
