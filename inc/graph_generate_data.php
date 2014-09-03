@@ -17,13 +17,13 @@ require('mysql.inc.php');
 $x = 1;
 $y = 1;
 
-$result = mysqli_query($con,"SELECT name, sensor_hardware_id, sensor_html_color, sensor_symbol FROM sensors WHERE status = '1'");
+$result = mysqli_query($con,"SELECT name, sensor_id, sensor_html_color, sensor_symbol FROM sensors WHERE status = '1'");
 $sensors_num = mysqli_num_rows($result);
 
 while($row = mysqli_fetch_array($result)) {
 
     $sensor_name        =       $row['name'];
-    $sensor_1w_id       =       $row['sensor_hardware_id'];
+    $sensor_id          =       $row['sensor_id'];
     $sensor_html_color  =       $row['sensor_html_color'];
     $sensor_symbol      =       $row['sensor_symbol'];
 
@@ -32,7 +32,7 @@ while($row = mysqli_fetch_array($result)) {
         label: "<? echo $sensor_name ?>",
         data:[<?
 
-    $result1 = mysqli_query($con,"SELECT value, timestamp FROM sensor_values WHERE sensor_id = '$sensor_1w_id' order by value_id desc limit $limit");
+    $result1 = mysqli_query($con,"SELECT value, timestamp FROM sensor_values WHERE sensor_id = '$sensor_id' order by value_id desc limit $limit");
     $value_count = mysqli_num_rows($result1);
 
 

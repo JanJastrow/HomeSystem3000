@@ -18,18 +18,31 @@ $timestamp      =       $_GET['timestamp'];
 //establish sql connection
 require('mysql.inc.php');
 
-//define the sql qry
-$qry            =     "INSERT INTO sensor_values (value, sensor_id, timestamp)
-VALUES ('$sensor_value', '$sensor_id','$timestamp')";
+//get sensor_id via hardware_id
+$sensor_id_qry  =       "";
 
-//execute sql qry
-mysqli_query($con,$qry);
+//fetch sensor_id
+$result = mysqli_query($con,"SELECT sensor_id from sensors where sensor_hardware_id = '$sensor_id'");
+while($row = mysqli_fetch_array($result)) {
 
-//return http response code (only for usage in debugging purposes)
-echo "200 OK";
+    $sensor_id     =       $row['sensor_id'];   
 
-//close mysql(i) connection
-mysqli_close($con);
+
+
+    //define the sql qry
+    $qry            =     "INSERT INTO sensor_values (value, sensor_id, timestamp)
+    VALUES ('$sensor_value', '$sensor_id','$timestamp')";
+    echo $qry;
+    
+    //execute sql qry
+    mysqli_query($con,$qry);
+    
+    //return http response code (only for usage in debugging purposes)
+    echo "200 OK";
+    
+    //close mysql(i) connection
+    mysqli_close($con);
+}
 }
 else
 //if token are not matching, so give error code
