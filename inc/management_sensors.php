@@ -28,7 +28,7 @@ while($row = mysqli_fetch_array($result)) {
     <td class="sensors--status"><i class="<? echo $sensor_indicator ?>"></i></td>
     <td class="sensors--name"><? echo $sensor_name ?></td>
     <td class="sensors--edit">
-        <a href="?site=edit_sensor_settings&sensor_id=<? echo $sensor_id ?>"><i class="fa fa-pencil-square-o fa-2x"></i></a>
+        <a href="?site=sensor_edit&sensor_id=<? echo $sensor_id ?>"><i class="fa fa-pencil-square-o fa-2x"></i></a>
         <a href="?site=reset_sensor&sensor_id=<? echo $sensor_id ?>"><i class="fa fa-refresh fa-2x"></i></a>
         <a href="?site=deactivate_sensor&sensor_id=<? echo $sensor_id ?>"><i class="fa fa-power-off fa-2x"></i></a>
         <a href="?site=remove_sensor&sensor_id=<? echo $sensor_id ?>"><i class="fa fa-remove fa-2x"></i></a>
