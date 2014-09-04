@@ -48,7 +48,7 @@ $(document).ready(function () {
 });
 </script>
 <article class="getdata">
-    <form class="newdata" action="?site=sensor_show_data" method="GET">
+    <form class="newdata" action="index.php?site=sensor_show_data" method="GET">
         <p>Zeige letzte</p>
         <input class="newdata--enter" type="number" name="limit" value="30" />
         <p>Werte.</p>

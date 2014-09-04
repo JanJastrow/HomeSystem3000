@@ -39,7 +39,7 @@
             <li><a href="index.php?site=camera_main"><i class="fa fa-camera"></i> Kameraüberwachung</a></li>
             <li><a href="index.php?site=management_sensors"><i class="fa fa-sliders"></i> Sensorverwaltung</a></li>
             <li><a href="index.php?site=management_users"><i class="fa fa-users"></i> Benutzerverwaltung</a></li>
-            <li><a href="index.php?site=settings_users"><i class="fa fa-cog"></i> Einstellungen</a></li>
+            <li><a href="index.php?site=settings_user"><i class="fa fa-cog"></i> Einstellungen</a></li>
         </ul>
     </nav>
 </header>

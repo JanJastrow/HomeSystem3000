@@ -1,7 +1,6 @@
 <h1>Benutzerverwaltung</h1>
-<table class="users">
-<?
-
+<table class="users"><tbody>
+<?php
 
 require('settings.inc.php');
 require('mysql.inc.php');
@@ -36,10 +35,10 @@ while($row = mysqli_fetch_array($result)) {
         <a href="?site=system_user_remove&system_user_id=<? echo $system_user_id ?>"><i class="fa fa-remove fa-2x"></i></a>
     </td>
 </tr>
-<?
+<?php
 }
 ?>
-</table>
+</tbody></table>
 <div class="users--add">
 <p>
     <a href="?site=management_users_create"><i class="fa fa-plus-square"></i></i>neuen User erstellen</a>

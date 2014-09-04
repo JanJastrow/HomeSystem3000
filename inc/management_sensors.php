@@ -1,7 +1,6 @@
 <h1>Sensorverwaltung</h1>
-<table class="sensors">
-<?
-
+<table class="sensors"><tbody>
+<?php
 
 require('settings.inc.php');
 require('mysql.inc.php');
@@ -35,10 +34,10 @@ while($row = mysqli_fetch_array($result)) {
         <a href="?site=remove_sensor&sensor_id=<? echo $sensor_id ?>"><i class="fa fa-remove fa-2x"></i></a>
     </td>
 </tr>
-<?
+<?php
 }
 ?>
-</table>
+</tbody></table>
 <div class="sensors--add">
 <p>
     <a href="?site=add_sensor"><i class="fa fa-plus-square"></i>neuen Sensor erstellen</a>
