@@ -1,5 +1,9 @@
+<?php
+$limit_24h      =       (1440/$sensor_int);
+$limit_12h      =       (720/$sensor_int);
+$limit_2h       =       (120/$sensor_int);
+?>
 <h1>Temperaturüberwachung</h1>
-
 
 <script type="text/javascript">
 <? include("graph_generate_data.php"); ?>
@@ -49,7 +53,7 @@ $(document).ready(function () {
 </script>
 <article class="getdata">
     <form class="newdata" action="index.php?site=sensor_show_data" method="GET">
-        <p>Zeige letzte</p>
+        <p>Zeige die letzten</p>
         <input class="newdata--enter" type="number" name="limit" value="30" />
         <p>Werte.</p>
         <input type="hidden" name="site" value="sensor_show_data" />
@@ -58,9 +62,9 @@ $(document).ready(function () {
 </article>
 <article>
     <ul class="last">
-        <li><a href="?site=sensor_show_data&limit=96">Zeige die letzten 24h</a></li>
-        <li><a href="?site=sensor_show_data&limit=48">Zeige die letzten 12h</a></li>
-        <li><a href="?site=sensor_show_data&limit=8">Zeige die letzten 2h</a></li>
+        <li><a href="?site=sensor_show_data&limit=<?php echo $limit_24h ?>">Zeige die letzten 24h</a></li>
+        <li><a href="?site=sensor_show_data&limit=<?php echo $limit_12h ?>">Zeige die letzten 12h</a></li>
+        <li><a href="?site=sensor_show_data&limit=<?php echo $limit_2h ?>">Zeige die letzten 2h</a></li>
     </p>
 </article>
 <style type="text/css">
@@ -73,7 +77,6 @@ $(document).ready(function () {
     display: inline-block;
     margin: 0.8em auto;
 }
-
 </style>
 <div id="flot-container">
     <div id="flot-legend"></div>

@@ -1,3 +1,4 @@
+<script type="text/javascript" src="/js/jscolor.js"></script>
 <h1>Sensoreinstellungen</h1>
 <table class="sensors">
 <tbody>
@@ -88,6 +89,18 @@ while($row = mysqli_fetch_array($result)) {
             ?>
         </select>
     </td>
+</tr>
+<tr>
+    <td>Linien-Farbe:</td>
+    <td><input type="text" value="<? echo $sensor_html_color  ?>" class="colorpicker"/></td>
+</tr>
+<tr>
+    <td>Beschreibung:</td>
+    <td><input type="text" value="<? echo $sensor_description ?>" /></td>
+</tr>
+<tr>
+    <td>Beschreibung:</td>
+    <td><input type="text" value="<? echo $sensor_description ?>" /></td>
 </tr>
 <?php
 }

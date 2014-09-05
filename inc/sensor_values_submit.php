@@ -35,7 +35,7 @@ while($row = mysqli_fetch_array($result)) {
 
 
     //send pushover request
-    if($notification_status = '1')
+    if($notification_status == '1')
     {
         require('lib/pushover.php');
 
