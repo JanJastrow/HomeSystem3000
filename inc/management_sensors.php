@@ -29,9 +29,9 @@ while($row = mysqli_fetch_array($result)) {
     <td class="sensors--name"><? echo $sensor_name ?></td>
     <td class="sensors--edit">
         <a href="?site=sensor_edit&sensor_id=<? echo $sensor_id ?>"><i class="fa fa-pencil-square-o fa-2x"></i></a>
-        <a href="?site=reset_sensor&sensor_id=<? echo $sensor_id ?>"><i class="fa fa-refresh fa-2x"></i></a>
-        <a href="?site=deactivate_sensor&sensor_id=<? echo $sensor_id ?>"><i class="fa fa-power-off fa-2x"></i></a>
-        <a href="?site=remove_sensor&sensor_id=<? echo $sensor_id ?>"><i class="fa fa-remove fa-2x"></i></a>
+        <a href="?site=sensor_edit&function=reset_data&sensor_id=<? echo $sensor_id ?>" onclick="return confirm('Alle Messwerte werden unwiderruflich gelöscht - Daten wirklich löschen?')"><i class="fa fa-refresh fa-2x"></i></a>
+        <a href="?site=sensor_edit&function=change_status&sensor_status=<? echo $sensor_status ?>&sensor_id=<? echo $sensor_id ?>"><i class="fa fa-power-off fa-2x"></i></a>
+        <a href="?site=sensor_edit&function=delete&sensor_id=<? echo $sensor_id ?>" onclick="return confirm('Der Sensor wird inklusive aller Messwerte aus dem System gelöscht - wirklich alle Daten löschen?')"><i class="fa fa-remove fa-2x"></i></a>
     </td>
 </tr>
 <?php
@@ -40,6 +40,6 @@ while($row = mysqli_fetch_array($result)) {
 </tbody></table>
 <div class="sensors--add">
 <p>
-    <a href="?site=add_sensor"><i class="fa fa-plus-square"></i>neuen Sensor erstellen</a>
+    <a href="?site=sensor_edit&function=create"><i class="fa fa-plus-square"></i>neuen Sensor erstellen</a>
 </p>
 </div>

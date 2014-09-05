@@ -1,4 +1,5 @@
 <?php
+    session_start();
     require 'inc/settings.inc.php';
     setlocale(LC_TIME, '$language');
 ?>
@@ -9,10 +10,7 @@
     <title><?php echo $project_title; ?></title>
     <link rel="shortcut icon" href="/favicon.ico" />
     <link rel="icon" sizes="16x16 32x32 64x64" href="/favicon.ico">
-    <link rel="apple-touch-icon" sizes="152x152" href="/favicon-152.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="/favicon-144.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="/favicon-120.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="/favicon-114.png">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
     <link rel="dns-prefetch" href="//ajax.googleapis.com">
     <link rel="dns-prefetch" href="//fonts.googleapis.com">
     <meta http-equiv="content-type" content="text/html" />
@@ -31,7 +29,9 @@
         <a href="index.php"><img src="img/logo.svg" class="logo" alt="Logo" /></a>
         <h1><a href="index.php"><?php echo $project_title; ?></a></h1>
     </div>
-    <nav class="nav">
+    <nav role="navigation">
+        <input type="checkbox" id="button" />
+        <label for="button" onclick><i class="fa fa-bars"></i> Menu</label>
         <ul>
             <li><a href="index.php?site=status_main"><i class="fa fa-tachometer"></i> Status</a></li>
             <li><a href="index.php?site=weather_main"><i class="wi wi-horizon-alt"></i> Wetter</a></li>

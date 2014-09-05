@@ -46,10 +46,21 @@ var options = {
     }
 };
 
+
+    $.plot($("#flot-container #flot-placeholder"),
+        [
+            {label:"Raspberry Pi CPU Temperatur", data:data1},
+            {label:"Balkon (Schatten)", data:data2},
+        ],
+        options
+    );
+
+/*
 $(document).ready(function () {
     $.plot($("#flot-placeholder"), dataset, options);
     $("#flot-placeholder").UseTooltip();
 });
+*/
 </script>
 <article class="getdata">
     <form class="newdata" action="index.php?site=sensor_show_data" method="GET">

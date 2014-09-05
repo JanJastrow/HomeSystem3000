@@ -1,3 +1,5 @@
+/*  Imports
+--------------------------*/
 /*  Resets
 --------------------------*/
 *, *::before, *::after {
@@ -2045,6 +2047,16 @@ html {
   font-size: 12pt; }
 
 body {
+  -webkit-animation: bugfix infinite 1s; }
+
+@-webkit-keyframes bugfix {
+  from {
+    padding: 0; }
+
+  to {
+    padding: 0; } }
+
+body {
   background: #ffffff; }
 
 .wrapper {
@@ -2097,42 +2109,109 @@ header .title {
     display: inline-block;
     float: left; }
 
+/*
 nav {
+    background: linear-gradient(to bottom, #404040 0%,#333333 100%);
+    border-top: 1px solid rgba(255,255,255,0.2);
+    border-bottom: 1px solid rgba(0,0,0,1);
+    padding: 0.5em 0.5em;
+}
+nav ul {
+
+    li {
+        display: inline-block;
+
+        a {
+            margin: 0.6em 0.6em;
+            font-size: 11pt;
+            color: #ddd;
+            text-decoration: none;
+            transition: color 0.3s ease;
+
+            &:hover {
+                color: #fff;
+            }
+        }
+    }
+}
+@media only screen and (max-width: 768px) {
+}
+@media only screen and (max-width: 450px) {
+    nav ul li {
+        display: block;
+
+        a {
+            display: block;
+            margin: 0.9em 0.7em;
+
+            i {
+                width: 1.5em;
+            }
+        }
+    }
+
+}
+*/
+nav[role="navigation"] {
+  position: relative;
+  width: 100%;
   background: -webkit-gradient(linear, left top, left bottom, from(#404040), to(#333333));
   background: -webkit-linear-gradient(top, #404040 0%, #333333 100%);
   background: linear-gradient(to bottom, #404040 0%, #333333 100%);
   border-top: 1px solid rgba(255, 255, 255, 0.2);
   border-bottom: 1px solid black;
   padding: 0.5em 0.5em; }
+  nav[role="navigation"] ul li {
+    display: inline-block; }
+    nav[role="navigation"] ul li a {
+      margin: 0.6em 0.6em;
+      font-size: 11pt;
+      color: #ddd;
+      text-decoration: none;
+      -webkit-transition: color 0.3s ease;
+              transition: color 0.3s ease; }
+      nav[role="navigation"] ul li a:hover {
+        color: #fff; }
 
-nav ul li {
-  display: inline-block; }
-  nav ul li a {
-    margin: 0.6em 0.6em;
-    font-size: 11pt;
+input[type=checkbox] {
+  position: absolute;
+  top: -9999px;
+  left: -9999px; }
+
+label {
+  display: none;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none; }
+
+@media screen and (max-width: 450px) {
+  nav[role="navigation"] ul {
+    display: none;
+    height: 100%; }
+  nav[role="navigation"] label {
     color: #ddd;
-    text-decoration: none;
-    -webkit-transition: color 0.3s ease;
-            transition: color 0.3s ease; }
-    nav ul li a:hover {
-      color: #fff; }
-
-@media only screen and (max-width: 768px) { }
-
-@media only screen and (max-width: 450px) {
-  nav ul li {
+    position: relative;
+    display: block;
+    width: 100%;
+    font-size: 1.1em;
+    padding: 0.3em 0; }
+  nav[role="navigation"] input[type=checkbox]:checked ~ label {
+    color: #ddd; }
+  nav[role="navigation"] input[type=checkbox]:checked ~ ul {
     display: block; }
-    nav ul li a {
-      display: block;
-      margin: 0.9em 0.7em; } }
-
-.nav--fixed {
-  position: fixed;
-  z-index: 1000;
-  border-top: 1px solid #000;
-  top: 0;
-  left: 0;
-  right: 0; }
+    nav[role="navigation"] input[type=checkbox]:checked ~ ul > li {
+      display: block; }
+      nav[role="navigation"] input[type=checkbox]:checked ~ ul > li:first-child a {
+        margin-top: 0.5em; }
+      nav[role="navigation"] input[type=checkbox]:checked ~ ul > li:last-child a {
+        margin-bottom: 0.5em; }
+      nav[role="navigation"] input[type=checkbox]:checked ~ ul > li a {
+        display: block;
+        margin: 0.9em 0 0.9em 1.8em; }
+        nav[role="navigation"] input[type=checkbox]:checked ~ ul > li a i {
+          width: 1.4em; } }
 
 /*  Wetter
 --------------------------*/

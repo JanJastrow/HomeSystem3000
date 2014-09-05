@@ -1,3 +1,10 @@
+<?php
+$site_function      =       $_GET['function'];
+
+if(empty($site_function))
+{
+?>
+
 <h1>Benutzerverwaltung</h1>
 <table class="users"><tbody>
 <?php
@@ -44,3 +51,6 @@ while($row = mysqli_fetch_array($result)) {
     <a href="?site=management_users_create"><i class="fa fa-plus-square"></i></i>neuen User erstellen</a>
 </p>
 </div>
+<?
+}
+?>
