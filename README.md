@@ -12,7 +12,10 @@ A system for managing your home with a rasperry pi.
 
 ## Tested with
 
-- Google Chrome 35+
+- Google Chrome 35+ (Mac & Windows)
+- Firefox 32+ (Mac)
+- iOS 7
+- Android 4.4.4 (Chrome)
 
 ## Credits
 - Sascha Gering (@mysash)
