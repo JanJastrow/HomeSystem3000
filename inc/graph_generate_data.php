@@ -46,6 +46,7 @@ while($row = mysqli_fetch_array($result)) {
         if($x <> $value_count)
         {
             echo ",";
+            // echo '<!-- '.$x.' | '.$value_count.' -->';
         }
         $x++;
     }

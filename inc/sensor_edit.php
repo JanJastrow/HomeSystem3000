@@ -318,7 +318,7 @@ elseif($site_function == "create")
                         $sensor_group_num       =       $group_row['sensor_group_id'];
                         $sensor_group_name      =       $group_row['group_name'];
                         
-                     ?><option value="<? echo $sensor_group_id ?>"><? echo $sensor_group_name ?></option>  
+                     ?><option value="<? echo $sensor_group_num ?>"><? echo $sensor_group_name ?></option>  
                     <?
                     }
                     ?>
@@ -367,5 +367,89 @@ elseif($site_function == "create")
     </table>
 </form>
 <?
+}
+elseif($site_function == "create_sensor")
+{
+    //get new values from the form
+    $sensor_unit            =       $_POST['sensor_unit'];
+    $sensor_name            =       $_POST['sensor_name'];
+    $sensor_hardware_id     =       $_POST['sensor_hardware_id'];
+    $sensor_description     =       $_POST['sensor_description'];
+    $sensor_status          =       $_POST['sensor_status'];
+    $sensor_group_id        =       $_POST['sensor_group_id'];
+    $sensor_html_color      =       $_POST['sensor_html_color'];
+    $sensor_symbol          =       $_POST['sensor_symbol'];
+    $sensor_max_value       =       $_POST['sensor_max_value'];
+    $sensor_min_value       =       $_POST['sensor_min_value'];
+    $sensor_warning_value   =       $_POST['sensor_warning_value'];
+    $sensor_notification    =       $_POST['sensor_notification_status']; 
+    
+    //validation of the values and sql escape
+    //comes later...
+    
+    //sql qry
+    $insert_qry             =       "
+    INSERT INTO sensors
+    (
+         `sensor_id`, 
+         `sensor_unit`, 
+         `name`, 
+         `sensor_hardware_id`, 
+         `description`, 
+         `status`, 
+         `sensor_group_id`, 
+         `sensor_html_color`, 
+         `sensor_symbol`
+    ) 
+        VALUES 
+    (
+        NULL,
+        '$sensor_unit',
+        '$sensor_name', 
+        '$sensor_hardware_id', 
+        '$sensor_description', 
+        '$sensor_status', 
+        '$sensor_group_id', 
+        '$sensor_html_color', 
+        '$sensor_symbol'
+    );";
+    
+    $qry            =       mysqli_query($con,$insert_qry);
+    
+    //get ai id from qry back
+    $sensor_id      =       mysqli_insert_id($con);
+    
+    //sql qry
+    $insert_qry             =       "
+    INSERT INTO sensor_notifications
+    (
+         `sensor_id`, 
+         `max_value`, 
+         `min_value`, 
+         `warning_value`, 
+         `notification_status`
+    ) 
+        VALUES 
+    (
+        '$sensor_id',
+        '$sensor_max_value', 
+        '$sensor_min_value', 
+        '$sensor_warning_value', 
+        '$sensor_notification'
+    );";
+    
+    
+    //insert second part of data
+    $qry       =       mysqli_query($con,$insert_qry);
+
+
+    mysqli_close($con); 
+?>
+<h1>Der Sensor wurde erfolgreich erstellt.</h1>
+
+<p>
+    <a href="?site=management_sensors">Zurück zur Sensorenverwaltung</a>
+</p>
+<?     
 }
 ?>

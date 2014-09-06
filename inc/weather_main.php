@@ -5,8 +5,7 @@ include('inc/lib/forecast.io.php');
 $forecast = new ForecastIO($forecast_api_key);
 
 
-function converticon($icon = 'wi-day-cloudy')
-{
+function converticon($icon = 'wi-day-cloudy') {
     switch ($icon) {
     case "clear-day":
         return "wi-day-sunny";
@@ -41,68 +40,80 @@ function converticon($icon = 'wi-day-cloudy')
     }
     return false;
 }
+function windDir($winddir)
+// Given the wind direction, return the text label
+// for that value.  16 point compass
+{
+      if (!isset($winddir)) {
+        return "---";
+      }
+    $windlabel = array ("N","NNO", "NO", "ONO", "O", "OSO", "SO", "SSO", "S",
+       "SSW","SW", "WSW", "W", "WNW", "NW", "NNW");
+    $dir = $windlabel[ fmod((($winddir + 11) / 22.5),16) ];
+    return "$dir";
+}
 
 /*
  * GET CURRENT CONDITIONS
  */
 $condition = $forecast->getCurrentConditions($forecast_latitude, $forecast_longitude, $forecast_units, $forecast_lang);
-echo '<p class="weather--now"><i class="weathericon wi '. converticon( $condition->getIcon() ) .'"></i></p>';
-echo '<p class=""><i class="wi wi-thermometer"></i>'. $condition->getTemperature() .'°C </p>';
-echo '<p class="">'. $condition->getSummary() .'</p>';
-echo '<p class="">Gefühlte Temperatur: '. $condition->getApparentTemperature().'</p>';
-echo '<p class="">Druck: '. $condition->getPressure() .' mb</p>';
-echo '<p class="">Feuchtigkeit: '. ($condition->getHumidity()*100).'%<br />Windgeschwindigkeit: '. $condition->getWindSpeed() .'</p>';
+
+echo '
+<table class="weather">
+<tbody>
+<tr>
+    <td class="weather--icon"><i class="weathericon wi '. converticon( $condition->getIcon() ) .'"></i></td>
+    <td class="weather--meta"><p class="weather--temp">'. $condition->getTemperature() .'<i class="wi wi-celsius"></i></p><br /><p class="weather--text">'. $condition->getSummary() .'</p></td>
+</tr>
+<tr>
+    <td class="weather--descr">Luftdruck</td>
+    <td class="weather--descr">Luftfeuchtigkeit</td>
+</tr>
+<tr>
+    <td>'. $condition->getPressure() .'mb</td>
+    <td>'. ($condition->getHumidity()*100).'%</td>
+</tr>
+<tr>
+    <td class="weather--descr">Windgeschwindigkeit</td>
+    <td class="weather--descr">Windrichtung</td>
+</tr>
+<tr>
+    <td>'. $condition->getWindSpeed() .'km/h</td>
+    <td>'. windDir($condition->getWindBearing()) .'</td>
+
+</tr>
+<tr>
+    <td class="weather--descr">Regenwahrsch.</td>
+    <td class="weather--descr">Taupunkt</td>
+</tr>
+<tr>
+    <td>'. $condition->getPrecipitationProbability() .'%</td>
+    <td>'. $condition->getDewPoint() .'<i class="wi wi-celsius"></i></td>
+</tr>
+</tbody>
+</table>';
 
 /*
  * GET HOURLY CONDITIONS FOR TODAY
- */
+
+
 $conditions_today = $forecast->getForecastToday($forecast_latitude, $forecast_longitude, $forecast_units, $forecast_lang);
 echo '<table class="weather--next-hours"><tbody>';
 foreach($conditions_today as $cond) {
-    echo "<td>". $cond->getTime('H:i') . " Uhr<br />" . $cond->getTemperature() . "°C</td>";
+    echo "<td>". $cond->getTime('H:i') . "&nbsp;Uhr<br />" . $cond->getTemperature() . "°C</td>";
 }
 echo '</tbody></table>';
+ */
 
 /*
  * GET DAILY CONDITIONS FOR NEXT 7 DAYS
  */
 $conditions_week = $forecast->getForecastWeek($forecast_latitude, $forecast_longitude, $forecast_units, $forecast_lang);
 
-echo '<table class="weather--next-week"><tbody>';
+echo '<table class="weather weather--next-week"><tbody>';
 foreach($conditions_week as $conditions) {
 echo "<td>" . $conditions->getTime('D') . "<br /><i class='wi wi-up'></i> " . $conditions->getMaxTemperature() . "°C<br /><i class='wi wi-down'></i> " . $conditions->getMinTemperature() . "°C</td>";
 }
 echo '</tbody></table>';
 ?>
 </div>
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
