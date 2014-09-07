@@ -1,0 +1,31 @@
+{
+  "name": "HomeSystem3000",
+  "version": "0.4.0",
+  "description": "A system for managing your home with a rasperry pi.",
+  "main": "gulpfile.js",
+  "dependencies": {},
+  "devDependencies": {
+    "del": "^0.1.2",
+    "gulp": "^3.8.7",
+    "gulp-autoprefixer": "^0.0.10",
+    "gulp-cache": "^0.2.2",
+    "gulp-concat": "^2.4.0",
+    "gulp-cssmin": "^0.1.6",
+    "gulp-imagemin": "^1.0.1",
+    "gulp-jshint": "^1.8.4",
+    "gulp-livereload": "^2.1.1",
+    "gulp-minify-css": "^0.3.8",
+    "gulp-notify": "^1.5.1",
+    "gulp-plumber": "^0.6.5",
+    "gulp-rename": "^1.2.0",
+    "gulp-ruby-sass": "^0.7.1",
+    "gulp-sass": "^0.7.3",
+    "gulp-uglify": "^1.0.1",
+    "gulp-watch": "^1.0.2",
+    "imagemin-pngcrush": "^0.1.0"
+  },
+  "scripts": {
+  },
+  "author": "Sascha Gering, Jan Jastrow",
+  "license": "MIT"
+}
