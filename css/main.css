@@ -2125,7 +2125,7 @@ nav[role="navigation"] {
   background: linear-gradient(to bottom, #404040 0%, #333333 100%);
   border-top: 1px solid rgba(255, 255, 255, 0.2);
   border-bottom: 1px solid black;
-  padding: 0.5em 0.5em; }
+  padding: 0.5em 0; }
   nav[role="navigation"] ul li {
     display: inline-block; }
     nav[role="navigation"] ul li a {
@@ -2159,9 +2159,9 @@ nav[role="navigation"] label {
     color: #ddd;
     position: relative;
     display: block;
-    width: 100%;
+    width: auto;
     font-size: 1.1em;
-    padding: 0.3em 0; }
+    padding: 0.3em 0.5em; }
   nav[role="navigation"] input[type=checkbox]:checked ~ label {
     color: #ddd; }
   nav[role="navigation"] input[type=checkbox]:checked ~ ul {
@@ -2224,6 +2224,16 @@ table.weather {
 .weather--next-week td:nth-child(8) {
   background-color: #92caff; }
 
+.weather--next-week td {
+  text-align: center;
+  float: left;
+  width: 27%;
+  margin: 2px; }
+
+.weather--next-week p:first-child {
+  margin-bottom: 0.3em;
+  text-decoration: underline; }
+
 /*  Temperatur
 --------------------------*/
 .getdata {
@@ -2235,7 +2245,8 @@ table.weather {
   font-size: 1.1em; }
 
 .newdata p {
-  display: inline-block; }
+  display: inline-block;
+  margin: 0.2em 0; }
 
 .newdata--enter {
   font-size: 12pt;
@@ -2246,32 +2257,35 @@ table.weather {
 
 .newdata--submit {
   font-size: 12pt;
-  padding: 0.2em 0.4em;
+  padding: 0.3em 0.4em;
   margin-left: 1em;
   background: #c8d4f5;
   color: #fff;
-  border: 1px solid #606c88;
-  background-color: #606c88;
-  border-radius: 5px; }
+  border: 1px solid #99682e;
+  background-color: #99682e;
+  border-radius: 5px;
+  -webkit-appearance: none;
+  -webkit-transition: all 0.25s ease;
+          transition: all 0.25s ease; }
   .newdata--submit:active, .newdata--submit:hover {
-    background-color: #7a86a1;
-    border: 1px solid #7a86a1; }
+    background-color: #724d22;
+    border: 1px solid #724d22; }
 
 ul.last {
   margin: 1em auto;
   text-align: center;
-  font-size: 10pt; }
+  font-size: 12pt; }
 
 ul.last li {
   display: inline-block;
-  margin: 0 0.5em;
+  margin: 0.4em 0.5em;
   border: 1px solid #606c88;
   background-color: #606c88;
   color: #fff;
   padding: 4px 8px;
   border-radius: 5px;
-  -webkit-transition: all 0.4s;
-          transition: all 0.4s; }
+  -webkit-transition: all 0.25s ease;
+          transition: all 0.25s ease; }
   ul.last li:hover, ul.last li:active {
     background-color: #7a86a1;
     border: 1px solid #7a86a1; }
@@ -2283,10 +2297,6 @@ ul.last li {
   max-width: 80%;
   height: 300px;
   margin: 0 auto; }
-
-@media only screen and (max-width: 768px) {
-  #flot-placeholder {
-    max-width: 738px; } }
 
 /*  Sensors
 --------------------------*/

@@ -101,7 +101,7 @@ nav[role="navigation"] {
     background: linear-gradient(to bottom, #404040 0%,#333333 100%);
     border-top: 1px solid rgba(255,255,255,0.2);
     border-bottom: 1px solid rgba(0,0,0,1);
-    padding: 0.5em 0.5em;
+    padding: 0.5em 0;
 
     ul {
         li {
@@ -145,9 +145,9 @@ nav[role="navigation"] label {
         color: #ddd;
         position: relative;
         display: block;
-        width: 100%;
+        width: auto;
         font-size: 1.1em;
-        padding: 0.3em 0;
+        padding: 0.3em 0.5em;
     }
 
     input[type=checkbox]:checked ~ label {
@@ -237,6 +237,17 @@ table.weather {
     background-color: darken(#d9ecff, 14%);
 }
 
+.weather--next-week td {
+    text-align: center;
+    float: left;
+    width: 27%;
+    margin: 2px;
+}
+.weather--next-week p:first-child {
+    margin-bottom: 0.3em;
+    text-decoration: underline;
+}
+
 
 /*  Temperatur
 --------------------------*/
@@ -251,6 +262,7 @@ table.weather {
 }
 .newdata p {
     display: inline-block;
+    margin: 0.2em 0;
 }
 .newdata--enter {
     font-size: 12pt;
@@ -261,34 +273,36 @@ table.weather {
 }
 .newdata--submit {
     font-size: 12pt;
-    padding: 0.2em 0.4em;
+    padding: 0.3em 0.4em;
     margin-left: 1em;
     background: #c8d4f5;
     color: #fff;
-    border: 1px solid $gradient-color2;
-    background-color: $gradient-color2;
+    border: 1px solid #99682e;
+    background-color: #99682e;
     border-radius: 5px;
+    -webkit-appearance: none;
+    transition: all 0.25s ease;
 
     &:active, &:hover{
-        background-color: lighten($gradient-color2, 10%);
-        border: 1px solid lighten($gradient-color2, 10%);
+        background-color: darken(#99682e, 10%);
+        border: 1px solid darken(#99682e, 10%);
     }
 }
 
 ul.last {
     margin: 1em auto;
     text-align: center;
-    font-size: 10pt;
+    font-size: 12pt;
 }
 ul.last li {
     display: inline-block;
-    margin: 0 0.5em;
+    margin: 0.4em 0.5em;
     border: 1px solid $gradient-color2;
     background-color: $gradient-color2;
     color: #fff;
     padding: 4px 8px;
     border-radius: 5px;
-    transition: all 0.4s;
+    transition: all 0.25s ease;
 
     &:hover, &:active{
         background-color: lighten($gradient-color2, 10%);
@@ -305,11 +319,6 @@ ul.last li {
     max-width: 80%;
     height: 300px;
     margin: 0 auto;
-}
-@media only screen and (max-width: 768px) {
-    #flot-placeholder {
-        max-width: 738px;
-    }
 }
 
 

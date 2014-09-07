@@ -26,7 +26,7 @@ function converticon($icon = 'wi-day-cloudy') {
         return "wi-strong-wind";
         break;
     case "fog":
-        return "wi-fig";
+        return "wi-fog";
         break;
     case "cloudy":
         return "wi-cloudy";
@@ -87,7 +87,7 @@ echo '
     <td class="weather--descr">Taupunkt</td>
 </tr>
 <tr>
-    <td>'. $condition->getPrecipitationProbability() .'%</td>
+    <td>'. ($condition->getPrecipitationProbability()*100) .'%</td>
     <td>'. $condition->getDewPoint() .'<i class="wi wi-celsius"></i></td>
 </tr>
 </tbody>
@@ -110,10 +110,10 @@ echo '</tbody></table>';
  */
 $conditions_week = $forecast->getForecastWeek($forecast_latitude, $forecast_longitude, $forecast_units, $forecast_lang);
 
-echo '<table class="weather weather--next-week"><tbody>';
+echo '<table class="weather weather--next-week clearfix"><tbody><tr>';
 foreach($conditions_week as $conditions) {
-echo "<td>" . $conditions->getTime('D') . "<br /><i class='wi wi-up'></i> " . $conditions->getMaxTemperature() . "°C<br /><i class='wi wi-down'></i> " . $conditions->getMinTemperature() . "°C</td>";
+echo "<td><p>" . $conditions->getTime('D') . "</p><p><i class='wi wi-up'></i> " . $conditions->getMaxTemperature() . " <i class='wi wi-celsius'></i><br /><i class='wi wi-down'></i> " . $conditions->getMinTemperature() . " <i class='wi wi-celsius'></i></p></td>";
 }
-echo '</tbody></table>';
+echo '</tr></tbody></table>';
 ?>
 </div>

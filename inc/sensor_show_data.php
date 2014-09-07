@@ -64,11 +64,10 @@ $(document).ready(function () {
 </script>
 <article class="getdata">
     <form class="newdata" action="index.php?site=sensor_show_data" method="GET">
-        <p>Zeige die letzten</p>
-        <input class="newdata--enter" type="number" name="limit" value="30" />
-        <p>Werte.</p>
+        <p><input class="newdata--enter" type="number" name="limit" value="30" /></p>
+        <p>letzten Werte anzeigen.</p>
         <input type="hidden" name="site" value="sensor_show_data" />
-        <input class="newdata--submit" type="submit" name="submit" value="Aktualisieren" />
+        <p><input class="newdata--submit" type="submit" name="submit" value="Aktualisieren" /></p>
     </form>
 </article>
 <article>

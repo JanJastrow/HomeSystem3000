@@ -39,7 +39,7 @@ while($row = mysqli_fetch_array($result)) {
     <td class="users--name"><? echo $system_user_name ?></td>
     <td class="users--lastlogin"><? echo $system_user_last_login_date ?></td>
     <td class="sensors--edit">
-        <a href="?site=system_user_edit&system_user_id=<? echo $system_user_id ?>"><i class="fa fa-pencil-square-o fa-2x"></i></a>
+        <a href="?site=management_users&function=edit&system_user_id=<? echo $system_user_id ?>"><i class="fa fa-pencil-square-o fa-2x"></i></a>
         <a href="?site=system_user_deactivate&system_user_id=<? echo $system_user_id ?>"><i class="fa fa-power-off fa-2x"></i></a>
         <a href="?site=system_user_remove&system_user_id=<? echo $system_user_id ?>"><i class="fa fa-remove fa-2x"></i></a>
     </td>
@@ -197,5 +197,59 @@ Die Zugangsdaten wurden dem Benutzer via E-Mail zugeschickt.
 </p>
 <?    
 }
+elseif($site_function   ==  "edit")
+{
+    
+    $system_user_id         =       $_GET['system_user_id'];
+    
+    
+    $select_qry             =       "select system_user_name, system_user_login_name, system_user_email, system_user_status from system_user where system_user_id = $system_user_id";
+    
+    $result = mysqli_query($con,$select_qry);
+    
+    while($row = mysqli_fetch_array($result)) {
+        
+    $system_user_name       =       $row['system_user_name'];
+    $system_user_login_name =       $row['system_user_login_name'];
+    $system_user_email      =       $row['system_user_email'];
+    $system_user_status     =       $row['system_user_status'];
+?>
+<h1>Benutzer bearbeiten</h1>
+<form method="POST" name="form" action="?site=management_users&function=create_user">
+    <table class="users">
+        <tbody>
+            <tr>
+                <th colspan="2"><? echo $system_user_login_name ?></th>
+            </tr>
+            <tr>
+                <td>Status:</td>
+                <td>
+                    <select name="system_user_status">
+                        <option value="1" <? if($system_user_status=="1") { echo "selected"; } ?>>Aktiv</option>
+                        <option value="0" <? if($system_user_status=="0") { echo "selected"; } ?>>Inaktiv</option>
+                    </select>
+                </td>
+            </tr>        
+            <tr>
+                <td>Name:</td>
+                <td><input type="text" name="system_user_name" value="<? echo $system_user_name ?>" /></td>
+            </tr>
+            <tr>
+                <td>Benutzername:</td>
+                <td><input type="text" name="system_login_name" value="<? echo $system_user_login_name ?>" /></td>
+            </tr>            
+            <tr>
+                <td>E-Mail:</td>
+                <td><input type="text" name="system_user_email" value="<? echo $system_user_email ?>" /></td>
+            </tr>
+            <tr>
+                <td colspan="2"><input type="submit" value="Benutzer speichern"/></td>
+            </tr>                                
+        </tbody>
+    </table>
+</form>
+<?    
+}
+}    
 ?>
 
